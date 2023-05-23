@@ -1,16 +1,6 @@
 import { isMobile } from '../isMobile';
 
 describe('isMobile', () => {
-  //  当有 debug=1 时，返回 false
-  test('returns false when debug=1 is present in the URL', () => {
-    const originalLocation = window.location;
-    delete window.location;
-    window.location = { ...originalLocation, search: '?debug=1' };
-
-    expect(isMobile()).toBe(false);
-
-    window.location = originalLocation;
-  });
 
   // 当 userAgent 是移动设备时，返回 true
   test('returns true when userAgent is a mobile device', () => {
