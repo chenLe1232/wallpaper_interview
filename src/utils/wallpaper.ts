@@ -6,6 +6,6 @@ const baseUrl = process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:7002/
 
 export const getWallpaper = (category: Category, pageStart: number = 0, pageTotal: number = 10) => {
     // category pageStart pageTotal query 拼接到url上
-    const url = `${'https://www.carline.life/api'}?category=${category}&pageStart=${pageStart}&pageTotal=${pageTotal}`;
+    const url = `${baseUrl}?category=${category}&pageStart=${pageStart}&pageTotal=${pageTotal}`;
     return debounceRequest(url, 'GET', null, 300);
 }
