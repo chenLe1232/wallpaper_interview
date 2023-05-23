@@ -1,0 +1,35 @@
+.img-wrapper {
+  max-width: 1000px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+}
+
+.img-container {
+  position: relative;
+}
+
+.img-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 4px;
+  display: none;
+}
+
+.img-container:hover .img-tag {
+  display: block;
+}
+
+.img-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

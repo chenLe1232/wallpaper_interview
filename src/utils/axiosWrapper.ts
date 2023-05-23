@@ -34,7 +34,7 @@ const request = (
         .then((response) => {
             // 请求成功后，删除取消请求的函数
             cancelTokenMap.delete(url);
-            return response;
+            return response?.data;
         })
         .catch((error) => {
             if (axios.isCancel(error)) {
@@ -52,12 +52,19 @@ const debounceRequest = (
     url: string,
     method: Method,
     data: any,
-    debounceTime: number = 0
-) => {
-    return debounce(
-        () => request(url, method, data),
-        debounceTime
-    );
+    debounceTime = 0
+): Promise<AxiosResponse<any, any> | undefined> => {
+    return new Promise((resolve, reject) => {
+        const debounced = debounce(
+            () => {
+                request(url, method, data)
+                    .then(resolve)
+                    .catch(reject);
+            },
+            debounceTime
+        );
+        debounced();
+    });
 };
 
 export { request, debounceRequest };
