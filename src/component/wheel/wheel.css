@@ -1,0 +1,110 @@
+.wheel-container {
+    background-image: -webkit-linear-gradient(top, #c43679, #d56152);
+    background-image: linear-gradient(180deg, #c43679, #d56152);
+    border-radius: 50%;
+    height: 3.4rem;
+    overflow: hidden;
+    width: 3.4rem
+}
+
+.wheel .pointer {
+    height: 1.24rem;
+    left: 50%;
+    position: absolute;
+    top: 1.02rem;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 1.1rem;
+}
+
+.wheel .pointer-desc {
+    border-radius: 50%;
+    bottom: 0.15rem;
+    height: 0.8rem;
+    left: 0.15rem;
+    position: absolute;
+    width: 0.8rem;
+}
+
+.wheel .pointer-desc .desc {
+    height: 0.44rem;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 0.41rem;
+}
+
+.wheel .pointer-desc.start {
+    background-image: -webkit-linear-gradient(top, #ffe2a4, #ffc03a);
+    background-image: linear-gradient(180deg, #ffe2a4, #ffc03a);
+}
+
+.wheel-container .wheel-bulb {
+    border-radius: 100%;
+    height: 3.11rem;
+    left: 50%;
+    margin-left: -1.755rem;
+    margin-top: -1.555rem;
+    position: absolute;
+    top: 50%;
+    width: 3.11rem;
+}
+
+.wheel-container .wheel-bg {
+    height: 3rem;
+    margin: 0.2rem;
+    -webkit-transform: rotate(23deg);
+    transform: rotate(23deg);
+    width: 3rem;
+}
+
+.wheel-container .wheel-bulb .bulb {
+    background-color: #fff;
+    border-radius: 100%;
+    height: 0.06rem;
+    left: 50%;
+    margin-left: -0.03rem;
+    position: absolute;
+    top: -0.03rem;
+    -webkit-transform-origin: 50% 1.585rem;
+    transform-origin: 50% 1.585rem;
+    width: 0.06rem;
+}
+
+.wheel-container .wheel-bulb .bulb:nth-child(2n) {
+    -webkit-animation: bulb0 1s infinite;
+    animation: bulb0 1s infinite;
+    background-color: #ffd88c;
+}
+
+.wheel-container .wheel-bulb .bulb:nth-child(odd) {
+    -webkit-animation: bulb1 1s infinite;
+    animation: bulb1 1s infinite;
+    background-color: rgba(255, 202, 93, .3);
+}
+
+@-webkit-keyframes bulb1 {
+    50% {
+        background-color: #fbc356
+    }
+}
+
+@keyframes bulb1 {
+    50% {
+        background-color: #fbc356
+    }
+}
+
+@-webkit-keyframes bulb0 {
+    50% {
+        background-color: rgba(255, 202, 93, .3)
+    }
+}
+
+@keyframes bulb0 {
+    50% {
+        background-color: rgba(255, 202, 93, .3)
+    }
+}

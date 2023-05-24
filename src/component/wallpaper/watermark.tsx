@@ -22,7 +22,7 @@ const Watermark: React.FC = () => {
                         textOverflow: 'clip',
                     }}
                 >
-                    谷罗英面试专用
+                    carline for fun
                 </div>
             );
         }

@@ -1,7 +1,7 @@
 
 import { Select } from '@arco-design/web-react';
-import { Category } from '../types/category';
-import { categoryOptions } from './const';
+import { Category } from '../../types/category';
+import { categoryOptions } from '../wallpaper/const';
 
 interface CategorySelectProps {
     setCategory: (category: Category) => void;
