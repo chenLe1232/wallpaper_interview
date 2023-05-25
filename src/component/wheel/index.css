@@ -1,0 +1,133 @@
+.duo-roulette-wrapper {
+    background-color: #fcbe2d;
+    margin: 0 auto;
+    max-width: 640px;
+    min-height: 100vh;
+}
+
+.part-roulette {
+    height: 4.95rem;
+    position: relative;
+    width: 100%;
+}
+
+.part-roulette div {
+    background-size: 100% 100%;
+}
+
+.part-roulette img {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    vertical-align: top;
+    width: auto;
+}
+
+.part-roulette img.main-bg-coin {
+    height: 4.64rem;
+    position: absolute;
+    width: 3.75rem;
+}
+
+.part-roulette .wheel {
+    height: 3.4rem;
+    top: 1.21rem;
+    width: 3.4rem;
+    left: 50%;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.part-roulette img.main-bg {
+    height: 4.95rem;
+    position: absolute;
+    width: 3.75rem;
+}
+
+.part-roulette img.main-title {
+    height: 0.31rem;
+    left: 50%;
+    margin-top: 0.3rem;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 1.62rem;
+}
+
+@media only screen and (max-width: 640px) {
+    html {
+        font-size: 170.66667px
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 128px
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    html {
+        font-size: 110.4px
+    }
+}
+
+@media only screen and (max-width: 412px) {
+    html {
+        font-size: 109.86667px
+    }
+}
+
+@media only screen and (max-width: 418px) {
+    html {
+        font-size: 111.46667
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    html {
+        font-size: 106.66667px
+    }
+}
+
+@media only screen and (max-width: 393px) {
+    html {
+        font-size: 104.8px
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    html {
+        font-size: 100px
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    html {
+        font-size: 96px
+    }
+}
+
+@media only screen and (max-width: 345px) {
+    html {
+        font-size: 92px
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    html {
+        font-size: 85.33333px
+    }
+}
+
+html {
+    font-size: calc(100vw / 3.75);
+    -webkit-text-size-adjust: none
+}
+
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 204.8px
+    }
+}
