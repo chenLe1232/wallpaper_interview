@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from 'react';
 import './wheel.css'
 import { debounce } from 'lodash-es';
 import { Message } from '@arco-design/web-react';
+import { calculateRotationAngle } from './lucky';
 // 奖品列表
 const prizeMap: any = {
     1: '华为平板',
@@ -16,28 +17,28 @@ const prizeMap: any = {
 const WheelRotate = () => {
     const wheelRef = useRef<HTMLDivElement>(null);
     const [count, setCount] = useState(1);
+    const [isStart, setIsStart] = useState(false);
     // 点击开始 进行转盘旋转
     const start = useCallback(() => {
+        if (isStart) return;
         let timer: any = null;
         // 获取wheelRef的dom元素
         const wheel = wheelRef.current;
         if (wheel) {
-            // 转盘8等分，初始化角度为23deg, 默认转动6圈 用时4s;
+            //  用时4s;
             wheel.style.transition = 'all 4s ease-in-out';
-            // 假设转动6圈，每圈360deg，总共2160deg
-            // 因为8等分，假设要求转到第五个等分，那么就是第五个等分的中间位置，也就是第五个等分的中间角度，也就是第五个等分的角度+22.5deg
-            //假设转到 1- 8 中某一个，实际是后端返回 这里采用随机数模拟 
-            const random = Math.floor(Math.random() * 8) + 1;
-            // 旋转角度 = 2160deg 圈数 * count+ 23deg 初始角度  + random  * 45deg 旋转角度 + 22.5deg 中间角度
-            wheel.style.transform = `rotate(${2160 * count + 23 + (8 - random) * 45 + 22.5}deg)`;
-            console.log('%c 🍉 random: ', 'font-size:20px;background-color: #FCA650;color:#fff;', random);
+            const { rotateAngel, index } = calculateRotationAngle(count);
+            console.log('%c 🍖 rotateAngel: ', 'font-size:20px;background-color: #FCA650;color:#fff;', rotateAngel, index);
+            wheel.style.transform = `rotate(${rotateAngel}deg)`;
+            setIsStart(true);
             timer = setTimeout(() => {
-                Message.success(`恭喜你抽中了${prizeMap[`${random}`]}`);
-                setCount(prev => prev + 1)
+                Message.success(`恭喜你抽中了${prizeMap[`${index}`]}`);
+                setCount(prev => prev + 1);
+                setIsStart(false);
             }, 4002)
         }
         return () => { clearTimeout(timer) }
-    }, [count])
+    }, [count, isStart])
     return (
         <div className="wheel">
             <div className="wheel-container">

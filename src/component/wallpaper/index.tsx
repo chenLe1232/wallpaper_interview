@@ -26,11 +26,18 @@ function App() {
     //! TODO: 没有resize监听
     if (isMobileFlag) return <MobileError />
     return (
-        <Spin loading={wallpaperData?.length === 0}>
-            {wallpaperData?.length ? <CategorySelect setCategory={setCategory} /> : null}
-            <Img data={wallpaperData} />
-            <Watermark />
-        </Spin>
+        <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+        }}>
+            <Spin loading={wallpaperData?.length === 0}>
+                {wallpaperData?.length ? <CategorySelect setCategory={setCategory} /> : null}
+                <Img data={wallpaperData} />
+                <Watermark />
+            </Spin>
+        </div>
+
     )
 }
 
