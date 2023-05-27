@@ -7,7 +7,8 @@ export function detectDevTools() {
     const timeout = setInterval(() => {
         (new Function('debugger'))();
         const newDate = new Date().getTime()
-        if (newDate - currentTime > 100) {
+        // 修改阈值为 500ms
+        if (newDate - currentTime > 500) {
             clearInterval(timeout);
             console.log('DevTools detected');
 
