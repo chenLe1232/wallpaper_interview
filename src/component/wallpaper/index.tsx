@@ -40,7 +40,7 @@ function App() {
                     minHeight: '100vh',
                     width: '100%',
                 }}>
-                    {wallpaperData?.length ? <CategorySelect setCategory={setCategory} /> : null}
+                    {wallpaperData?.length ? <CategorySelect setCategory={setCategory} category={category} /> : null}
                     <Img data={wallpaperData} />
                 </div>
                 <Watermark />
